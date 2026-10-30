@@ -8,6 +8,9 @@ Polymarket 风格议题同步 + 红蓝站队 + 评论 + 体力/段位（无真�
 2. 目录：`C:\Users\Administrator\Desktop\判决\panjue-miniprogram`
 3. AppID：**测试号** 或 `touristappid`
 4. 底部 Tab：**来源** / **评价** / **我的**
+<img width="400" height="794" alt="image" src="https://github.com/user-attachments/assets/d9d2c0d5-7f17-4b20-bf20-339db3cda1a4" />
+<img width="407" height="789" alt="image" src="https://github.com/user-attachments/assets/cf9cbb08-0b56-4540-bb2b-b4a15f576c53" />
+<img width="443" height="789" alt="image" src="https://github.com/user-attachments/assets/3e8e0e7a-ea20-43a7-8c3d-cff046c50058" />
 
 ## 同步议题（电脑端 · 用户不可见）
 
