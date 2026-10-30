@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="intro">
+    <view class="h">议题来源</view>
+    <view class="p">议题来自 Falcon API（Polymarket 数据）。小程序只做站队评论，不下注。</view>
+  </view>
+
+  <view class="card">
+    <view class="card-h">怎么更新真数据</view>
+    <view class="li">1. 密钥放在项目 secrets/local.json（勿外传）</view>
+    <view class="li">2. 电脑在项目目录运行：npm run sync（翻译+术语表）</view>
+    <view class="li">3. 回到这里点「载入 Falcon 缓存」</view>
+    <view class="li">4. 去「评价」站队讨论</view>
+  </view>
+
+  <view class="card">
+    <view class="card-h">当前状态</view>
+    <view class="meta">数据源：{{meta.source || '未同步'}}</view>
+    <view class="meta">条数：{{meta.count || 0}}</view>
+    <view class="meta">上次载入：{{syncText}}</view>
+    <view class="meta">说明：{{meta.note || '—'}}</view>
+    <button class="btn-primary sync" bindtap="onSync" loading="{{syncing}}">载入 Falcon 缓存</button>
+  </view>
+
+  <view class="warn">
+    密钥不要写进小程序代码。Free 额度有限，脚本拉取才会消耗 Falcon credits。国际热点进微信仍可能审不过。
+  </view>
+
+  <button class="btn-ghost go" bindtap="goPlaza">去「评价」站队讨论</button>
+</view>

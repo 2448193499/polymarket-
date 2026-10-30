@@ -1,0 +1,23 @@
+# 密钥与本机配置（绝对不要上传）
+secrets/
+*.pem
+*.key
+
+# 依赖
+node_modules/
+
+# 同步缓存 / 超大原始数据（不要进仓库）
+utils/gamma_raw.json
+utils/falcon_raw.json
+utils/falcon_closed.json
+utils/falcon_probe_dump.json
+utils/translate_cache.json
+utils/panjue_feed.json
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+project.private.config.json

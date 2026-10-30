@@ -1,0 +1,102 @@
+.page {
+  min-height: 100vh;
+  padding: 28rpx 32rpx 48rpx;
+}
+
+.intro {
+  font-size: 24rpx;
+  color: var(--muted);
+  margin-bottom: 24rpx;
+  line-height: 1.5;
+}
+
+.tabs {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 20rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  border-radius: 12rpx;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 28rpx;
+}
+
+.tab.on {
+  background: #161616;
+  color: #fff;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 22rpx 8rpx;
+  border-bottom: 1rpx solid var(--line);
+}
+
+.row.me {
+  background: rgba(31, 95, 191, 0.06);
+  margin: 0 -16rpx;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  border-radius: 12rpx;
+  border-bottom-color: transparent;
+}
+
+.place {
+  width: 48rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 800;
+  color: #9a958c;
+}
+
+.place.top {
+  color: #c23b2e;
+}
+
+.mid {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.you {
+  margin-left: 10rpx;
+  font-size: 20rpx;
+  padding: 2rpx 10rpx;
+  border-radius: 6rpx;
+  background: #1f5fbf;
+  color: #fff;
+  font-weight: 700;
+}
+
+.sub {
+  margin-top: 4rpx;
+  font-size: 22rpx;
+  color: var(--muted);
+}
+
+.score {
+  text-align: right;
+}
+
+.score .n {
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.score .u {
+  font-size: 20rpx;
+  color: var(--muted);
+}

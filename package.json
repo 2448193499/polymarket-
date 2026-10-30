@@ -1,0 +1,12 @@
+{
+  "name": "panjue-miniprogram-sync",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync-falcon.mjs",
+    "upload-feed": "node scripts/upload-oss.mjs",
+    "sync:push": "node scripts/sync-falcon.mjs && node scripts/upload-oss.mjs"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.1"
+  }
+}

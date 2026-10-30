@@ -1,0 +1,155 @@
+{
+  "phrases": [
+    {
+      "pattern": "(?i)^Trump approval Up or Down this week\\??$",
+      "zh": "特朗普本周支持率会上升还是下降？"
+    },
+    {
+      "pattern": "(?i)^Will there be ([0-9]+)-([0-9]+) inches of snow in D\\.?C\\.? in January\\??$",
+      "zh": "今年1月华盛顿特区积雪会在$1–$2英寸吗？"
+    },
+    {
+      "pattern": "(?i)^Will there be less than ([0-9]+) inch(?:es)? of snow in D\\.?C\\.? in January\\??$",
+      "zh": "今年1月华盛顿特区积雪会少于$1英寸吗？"
+    },
+    {
+      "pattern": "(?i)^Will there be ([0-9]+) or more inches of snow in D\\.?C\\.? in January\\??$",
+      "zh": "今年1月华盛顿特区积雪会达到$1英寸或更多吗？"
+    },
+    {
+      "pattern": "(?i)^Series (.+?) Rounds Handicap \\(([-+0-9.]+)\\)$",
+      "zh": "系列赛 $1 回合让分（$2）"
+    },
+    {
+      "pattern": "(?i)^Game Handicap:\\s*(.+?) \\(([-+0-9.]+)\\)$",
+      "zh": "小局让分：$1（$2）"
+    },
+    {
+      "pattern": "(?i)^(.+?) to win ([0-9]+) games?\\??$",
+      "zh": "$1 能赢下 $2 局吗？"
+    },
+    {
+      "pattern": "(?i)^LoL:\\s*(.+?)\\s+vs\\.?\\s+(.+?)\\s*\\(BO([0-9]+)\\)$",
+      "zh": "英雄联盟：$1 对阵 $2（$3局制）"
+    },
+    {
+      "pattern": "(?i)^LoL:\\s*(.+?)\\s+vs\\.?\\s+(.+?)\\s*-\\s*Game\\s+([0-9]+)\\s+Winner\\??$",
+      "zh": "英雄联盟：$1 对阵 $2 — 第$3局胜负"
+    },
+    {
+      "pattern": "(?i)^Will (.+?) enter (.+?) before (.+?)\\??$",
+      "zh": "$1 会在 $3 之前进入 $2 吗？"
+    },
+    {
+      "pattern": "(?i)^Will (.+?) enter (.+?) by (.+?)\\??$",
+      "zh": "$1 会在 $3 之前进入 $2 吗？"
+    },
+    {
+      "pattern": "(?i)^Will \"(.+?)\" score at least ([0-9]+) on the Rotten Tomatoes Tomatometer\\??$",
+      "zh": "《$1》在烂番茄新鲜度上能拿到至少 $2 分吗？"
+    },
+    {
+      "pattern": "(?i)^Will the Democratic Party candidate win the ([0-9]{4}) ([A-Z]{2})-([0-9]+) House election by ([0-9]+%-?[0-9]*%?)\\??$",
+      "zh": "民主党候选人会以 $4 的优势赢得 $1 年 $2-$3 众议院选举吗？"
+    },
+    {
+      "pattern": "(?i)^(.+?) to win ([0-9]+) maps?\\??$",
+      "zh": "$1 能赢下 $2 张地图吗？"
+    },
+    {
+      "pattern": "(?i)^Will MrBeast's celebrity challenge video get less than ([0-9]+) million views on day 1\\??$",
+      "zh": "MrBeast 名人挑战视频首日播放量会低于 $1 百万吗？"
+    },
+    {
+      "pattern": "(?i)^Will Mike Tomlin join the New York Giants prior to (.+?)\\??$",
+      "zh": "迈克·汤姆林会在 $1 之前加入纽约巨人队吗？"
+    },
+    {
+      "pattern": "(?i)^Will (.+?) launch a token by (.+?)\\??$",
+      "zh": "$1 会在 $2 之前发行代币吗？"
+    }
+  ],
+  "terms": [
+    { "en": "Rounds Handicap", "zh": "回合让分" },
+    { "en": "Game Handicap", "zh": "小局让分" },
+    { "en": "Handicap", "zh": "让分" },
+    { "en": "approval rating", "zh": "支持率" },
+    { "en": "approval", "zh": "支持率" },
+    { "en": "Up or Down", "zh": "上升还是下降" },
+    { "en": "inches of snow", "zh": "英寸积雪" },
+    { "en": "D.C.", "zh": "华盛顿特区" },
+    { "en": "January", "zh": "1月" },
+    { "en": "Series", "zh": "系列赛" },
+    { "en": "Challengers", "zh": "挑战者" },
+    { "en": "Esports", "zh": "电竞" },
+    { "en": "Over", "zh": "大分" },
+    { "en": "Under", "zh": "小分" },
+    { "en": "Yes", "zh": "是" },
+    { "en": "No", "zh": "否" },
+    { "en": "Hanwha Life Esports Challengers", "zh": "韩华生命挑战者" },
+    { "en": "Hanwha Life", "zh": "韩华生命" },
+    { "en": "Gen.G Global Academy", "zh": "Gen.G青训" },
+    { "en": "Gen.G Global", "zh": "Gen.G青训" },
+    { "en": "Gen.G Global Academy", "zh": "Gen.G青训" },
+    { "en": "T1 Academy", "zh": "T1青训" },
+    { "en": "HANJIN BRION Challengers", "zh": "韩华 BRION 挑战者" },
+    { "en": "Hanwha Life Esports Challengers", "zh": "韩华生命挑战者" },
+    { "en": "Russia", "zh": "俄罗斯" },
+    { "en": "Bilitsk", "zh": "比利茨克" },
+    { "en": "Bilytske", "zh": "比利茨克" },
+    { "en": "February 28, 2026", "zh": "2026年2月28日" },
+    { "en": "March 31, 2027", "zh": "2027年3月31日" },
+    { "en": "June 30, 2027", "zh": "2027年6月30日" },
+    { "en": "September 30, 2027", "zh": "2027年9月30日" },
+    { "en": "December 31, 2027", "zh": "2027年12月31日" },
+    { "en": "launch a token", "zh": "发行代币" },
+    { "en": "public sale", "zh": "公募" },
+    { "en": "Total commitments", "zh": "认购总额" },
+    { "en": "差点", "zh": "让分" },
+    { "en": "批准", "zh": "支持率" }
+  ],
+  "labelMap": {
+    "Yes": "是",
+    "No": "否",
+    "Up": "上升",
+    "Down": "下降",
+    "Over": "大分",
+    "Under": "小分",
+    "True": "是",
+    "False": "否",
+    "Democratic Party": "民主党",
+    "Republican Party": "共和党",
+    "Democrats Sweep": "民主党横扫",
+    "R Senate, D House": "共和党参议院、民主党众议院",
+    "No change": "不变",
+    "25 bps increase": "加息25基点",
+    "25 bps decrease": "降息25基点",
+    "NVIDIA": "英伟达",
+    "Apple": "苹果",
+    "Google": "谷歌",
+    "Anthropic": "Anthropic",
+    "San Francisco 49ers": "49人",
+    "Buffalo Bills": "比尔队",
+    "Barcelona": "巴萨",
+    "Paris Saint-Germain": "巴黎圣日耳曼",
+    "San Antonio Spurs": "马刺",
+    "Oklahoma City Thunder": "雷霆",
+    "March 31": "3月31日",
+    "December 31": "12月31日",
+    "June 30, 2027": "2027年6月30日",
+    "September 30, 2027": "2027年9月30日",
+    "Alexandria Ocasio-Cortez": "奥卡西奥-科尔特斯",
+    "Gavin Newsom": "加文·纽森",
+    "JD Vance": "万斯",
+    "J.D. Vance": "万斯",
+    "Marco Rubio": "卢比奥",
+    "Marine Le Pen": "勒庞",
+    "Édouard Philippe": "菲利普",
+    "Edouard Philippe": "菲利普",
+    "Donald Trump": "特朗普",
+    "Joe Biden": "拜登",
+    "Kamala Harris": "哈里斯",
+    "Benjamin Netanyahu": "内塔尼亚胡",
+    "Emmanuel Macron": "马克龙"
+  }
+}

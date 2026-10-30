@@ -1,0 +1,51 @@
+<view class="page">
+  <view class="topbar">
+    <text class="brand">判决社区</text>
+    <text class="sub">先站队，再说话</text>
+  </view>
+
+  <view class="menu">
+    <!-- 左：分类（点餐栏样式） -->
+    <scroll-view class="side" scroll-y enhanced show-scrollbar="{{false}}">
+      <view
+        class="side-item {{activeCat===item.id?'active':''}}"
+        wx:for="{{categories}}"
+        wx:key="id"
+        data-cat="{{item.id}}"
+        bindtap="onCat"
+      >
+        <view class="side-text">{{item.name}}</view>
+        <view class="side-count" wx:if="{{item.id!=='all'}}">{{item.count}}</view>
+      </view>
+    </scroll-view>
+
+    <!-- 右：细分议题 -->
+    <scroll-view class="main" scroll-y enhanced show-scrollbar="{{false}}">
+      <view class="main-cap">{{activeName}} · {{filtered.length}} 题</view>
+
+      <block wx:if="{{filtered.length}}">
+        <view
+          class="row"
+          wx:for="{{filtered}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="goDetail"
+        >
+          <view class="row-body">
+            <view class="row-title">{{item.title}}</view>
+            <view class="row-meta">{{item.categoryName}} · 已有 {{item.total}} 人参与 · {{item.commentCount}} 评</view>
+            <view class="ratio-bar">
+              <view class="red" style="width: {{item.redPct}}%;"></view>
+              <view class="blue" style="width: {{item.bluePct}}%;"></view>
+            </view>
+            <view class="row-labels">
+              <text class="red-t">{{item.redLabel}} {{item.redPct}}%</text>
+              <text class="blue-t">{{item.blueLabel}} {{item.bluePct}}%</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="empty" wx:else>该类暂无议题</view>
+    </scroll-view>
+  </view>
+</view>

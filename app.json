@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/plaza/plaza",
+    "pages/me/me",
+    "pages/detail/detail",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "navigationBarTitleText": "poly预测市场",
+    "navigationBarBackgroundColor": "#F7F4EF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F4EF",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8A857C",
+    "selectedColor": "#1A1A1A",
+    "backgroundColor": "#FBF9F5",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/plaza/plaza",
+        "text": "评价",
+        "iconPath": "images/tab-plaza.png",
+        "selectedIconPath": "images/tab-plaza-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tab-me.png",
+        "selectedIconPath": "images/tab-me-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,99 @@
+<view class="page">
+  <view class="profile">
+    <view class="avatar">{{avatarText}}</view>
+    <view class="info">
+      <view class="name-row" wx:if="{{user.loggedIn}}">
+        <text class="name">{{user.nickName}}</text>
+        <text class="tier">{{user.tierName}}</text>
+      </view>
+      <view class="name muted" wx:else>未登录</view>
+      <view class="sub">演示版本地身份 · 非真实微信登录</view>
+    </view>
+  </view>
+
+  <!-- 体力 + 战绩：加在这里 -->
+  <view class="stats" wx:if="{{user.loggedIn}}">
+    <view class="stat-card stamina">
+      <view class="stat-k">今日体力</view>
+      <view class="stat-v">{{user.stamina}}<text class="slash">/{{user.staminaMax}}</text></view>
+      <view class="stat-tip">站队消耗 {{user.voteCost}} 点 · 看戏不耗</view>
+      <button
+        class="btn-primary checkin {{user.checkedIn?'off':''}}"
+        size="mini"
+        bindtap="onCheckIn"
+        disabled="{{user.checkedIn}}"
+      >{{user.checkedIn ? '今日已签到' : '签到领体力'}}</button>
+    </view>
+
+    <view class="stat-card record">
+      <view class="stat-k">判决战绩</view>
+      <view class="record-grid">
+        <view class="rg">
+          <view class="n">{{user.rankScore}}</view>
+          <view class="l">段位分</view>
+        </view>
+        <view class="rg">
+          <view class="n">{{user.winRate}}%</view>
+          <view class="l">胜率</view>
+        </view>
+        <view class="rg">
+          <view class="n">{{user.wins}}/{{user.losses}}</view>
+          <view class="l">胜/负</view>
+        </view>
+        <view class="rg">
+          <view class="n">{{user.streak}}</view>
+          <view class="l">连胜</view>
+        </view>
+      </view>
+      <view class="progress-wrap" wx:if="{{user.nextAt}}">
+        <view class="progress-bar"><view class="fill" style="width: {{user.tierProgress}}%;"></view></view>
+        <view class="progress-tip">距下一段位还差 {{user.toNext}} 分</view>
+      </view>
+      <view class="progress-tip" wx:else>已达最高展示段位</view>
+      <button class="btn-ghost board-btn" size="mini" bindtap="goRank">查看段位榜</button>
+    </view>
+  </view>
+
+  <view class="panel" wx:if="{{!user.loggedIn}}">
+    <view class="label">起个昵称开始站队</view>
+    <input class="nick" maxlength="12" placeholder="昵称" value="{{nickDraft}}" bindinput="onNick" />
+    <button class="btn-primary" bindtap="login">进入 poly预测市场</button>
+  </view>
+
+  <view class="panel" wx:else>
+    <view class="row">
+      <input
+        class="nick"
+        maxlength="12"
+        value="{{nickDraft}}"
+        bindinput="onNick"
+        disabled="{{!user.canChangeNick}}"
+      />
+      <button
+        class="btn-ghost save"
+        size="mini"
+        bindtap="saveNick"
+        disabled="{{!user.canChangeNick}}"
+      >改昵称</button>
+    </view>
+    <view class="nick-tip" wx:if="{{user.canChangeNick}}">昵称每月仅可修改 1 次</view>
+    <view class="nick-tip" wx:else>已改过昵称，约 {{user.nickCooldownDays}} 天后可再改</view>
+  </view>
+
+  <view class="section-h">我站过队的</view>
+
+  <view class="list" wx:if="{{list.length}}">
+    <view class="item" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+      <view class="item-title">{{item.title}}</view>
+      <view class="item-meta">
+        <text wx:if="{{item.settled}}" class="done">已结算</text>
+        <text wx:if="{{item.mySide==='red'}}" class="red">站队：{{item.redLabel}}</text>
+        <text wx:elif="{{item.mySide==='blue'}}" class="blue">站队：{{item.blueLabel}}</text>
+        <text wx:else>已有 {{item.total}} 人参与</text>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:else>还没有站过队</view>
+
+  <button class="btn-ghost reset" bindtap="resetDemo">恢复演示数据</button>
+</view>

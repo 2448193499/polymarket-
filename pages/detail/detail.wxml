@@ -1,0 +1,122 @@
+<view class="page" wx:if="{{topic}}">
+  <view class="head">
+    <view class="title">{{topic.title}}</view>
+    <view class="body" wx:if="{{topic.body}}">{{topic.body}}</view>
+    <view class="meta">已有 {{topic.total}} 人参与</view>
+  </view>
+
+  <!-- 总票比例：对抗条 -->
+  <view class="arena-bar">
+    <view class="bar-track">
+      <view class="bar-red" style="width: {{topic.redPct}}%;">
+        <text wx:if="{{topic.redPct>=18}}">{{topic.redPct}}%</text>
+      </view>
+      <view class="bar-blue" style="width: {{topic.bluePct}}%;">
+        <text wx:if="{{topic.bluePct>=18}}">{{topic.bluePct}}%</text>
+      </view>
+    </view>
+    <view class="bar-labels">
+      <text class="l-red">{{topic.redLabel}}</text>
+      <text class="l-vs">VS</text>
+      <text class="l-blue">{{topic.blueLabel}}</text>
+    </view>
+  </view>
+
+  <!-- 站队 -->
+  <view class="stance" wx:if="{{!topic.mySide && !topic.settled}}">
+    <view class="stance-tip">站队消耗 1 体力（剩余 {{stamina}}）· 选后不可改</view>
+    <view class="stance-btns">
+      <button class="side-btn red" data-side="red" bindtap="onVote">站红 · {{topic.redLabel}}</button>
+      <button class="side-btn blue" data-side="blue" bindtap="onVote">站蓝 · {{topic.blueLabel}}</button>
+    </view>
+  </view>
+  <view class="stance-done" wx:elif="{{topic.mySide}}">
+    <text>你站在</text>
+    <text class="tag {{topic.mySide}}">{{topic.mySide==='red' ? topic.redLabel : topic.blueLabel}}</text>
+    <text>一侧</text>
+  </view>
+  <view class="stance-done" wx:else>议题已结算，仅可围观</view>
+
+  <view class="settle-wait" wx:if="{{topic.waitingResult}}">
+    已站队 · 等待公开结果自动结算（约每小时同步）
+  </view>
+  <view class="settle-done" wx:if="{{topic.settled}}">
+    已结算 · 结果方：{{topic.winSide==='red' ? topic.redLabel : topic.blueLabel}}
+  </view>
+
+  <!-- 代表对峙 -->
+  <view class="duel">
+    <view class="duel-col red">
+      <view class="duel-h">红方代表</view>
+      <view class="duel-bubble" wx:if="{{topic.redRep}}">
+        <view class="duel-text">{{topic.redRep.content}}</view>
+        <view class="duel-meta">{{topic.redRep.userName}} · {{topic.redRep.likes}} 赞</view>
+      </view>
+      <view class="duel-empty" wx:else>暂无代表评论</view>
+    </view>
+    <view class="duel-vs">
+      <view class="vs-circle">VS</view>
+    </view>
+    <view class="duel-col blue">
+      <view class="duel-h">蓝方代表</view>
+      <view class="duel-bubble" wx:if="{{topic.blueRep}}">
+        <view class="duel-text">{{topic.blueRep.content}}</view>
+        <view class="duel-meta">{{topic.blueRep.userName}} · {{topic.blueRep.likes}} 赞</view>
+      </view>
+      <view class="duel-empty" wx:else>暂无代表评论</view>
+    </view>
+  </view>
+
+  <!-- 更多发言：单列对流，风格跟上面对峙一致 -->
+  <view class="feed-head">
+    <view class="feed-title">更多发言</view>
+    <view class="filters">
+      <view class="chip {{filter==='all'?'on':''}}" data-filter="all" bindtap="setFilter">全部</view>
+      <view class="chip {{filter==='red'?'on red':''}}" data-filter="red" bindtap="setFilter">红方</view>
+      <view class="chip {{filter==='blue'?'on blue':''}}" data-filter="blue" bindtap="setFilter">蓝方</view>
+    </view>
+  </view>
+
+  <view class="feed" wx:if="{{comments.length}}">
+    <view
+      class="feed-row {{item.side}}"
+      wx:for="{{comments}}"
+      wx:key="id"
+    >
+      <view class="feed-card {{item.side}}">
+        <view class="feed-top">
+          <text class="feed-name">{{item.userName}}</text>
+          <text class="feed-side">{{item.side==='red' ? topic.redLabel : topic.blueLabel}}</text>
+        </view>
+        <view class="feed-body">{{item.content}}</view>
+        <view class="feed-like {{item.liked?'on':''}}" data-id="{{item.id}}" bindtap="onLike">赞 {{item.likes}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="feed-empty" wx:else>还没有更多发言</view>
+
+  <!-- 底部输入 -->
+  <view class="composer">
+    <block wx:if="{{topic.settled}}">
+      <view class="locked">已结算，仅可围观</view>
+    </block>
+    <block wx:elif="{{topic.mySide}}">
+      <view class="composer-side {{topic.mySide}}">
+        {{topic.mySide==='red' ? topic.redLabel : topic.blueLabel}}
+      </view>
+      <input
+        class="composer-input"
+        maxlength="200"
+        placeholder="以你这一侧的立场发言…"
+        value="{{draft}}"
+        bindinput="onDraft"
+        confirm-type="send"
+        bindconfirm="onSend"
+      />
+      <view class="send-btn {{canSend?'ready':''}} {{topic.mySide}}" bindtap="onSend">发送</view>
+    </block>
+    <view class="locked" wx:else>先站队，才能加入对立发言</view>
+  </view>
+</view>
+
+<view class="empty" wx:else>议题不存在</view>

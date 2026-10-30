@@ -1,0 +1,157 @@
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.topbar {
+  flex-shrink: 0;
+  padding: 20rpx 28rpx 16rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: baseline;
+  gap: 16rpx;
+}
+
+.brand {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: "Songti SC", "STSong", "SimSun", serif;
+  letter-spacing: 0.06em;
+}
+
+.sub {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.menu {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+/* ===== 左侧分类：点餐栏 ===== */
+.side {
+  width: 168rpx;
+  flex-shrink: 0;
+  height: 100%;
+  background: #f2f2f2;
+}
+
+.side-item {
+  min-height: 96rpx;
+  padding: 20rpx 8rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+  position: relative;
+}
+
+.side-text {
+  font-size: 26rpx;
+  color: #333;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.side-count {
+  font-size: 20rpx;
+  color: #999;
+  line-height: 1;
+}
+
+.side-item.active {
+  background: #e4002b;
+}
+
+.side-item.active .side-text {
+  color: #fff;
+  font-weight: 700;
+}
+
+.side-item.active .side-count {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== 右侧列表 ===== */
+.main {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: #fff;
+  padding: 0 0 40rpx;
+  box-sizing: border-box;
+}
+
+.main-cap {
+  padding: 20rpx 24rpx 8rpx;
+  font-size: 24rpx;
+  color: #999;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.row {
+  padding: 22rpx 24rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.row-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+}
+
+.row-meta {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+
+.ratio-bar {
+  margin-top: 14rpx;
+  height: 12rpx;
+  border-radius: 999rpx;
+  overflow: hidden;
+  background: #eee;
+  display: flex;
+}
+
+.ratio-bar .red {
+  background: #c23b2e;
+  height: 100%;
+}
+
+.ratio-bar .blue {
+  background: #1f5fbf;
+  height: 100%;
+}
+
+.row-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rpx;
+  font-size: 20rpx;
+}
+
+.red-t { color: #c23b2e; }
+.blue-t { color: #1f5fbf; }
+
+.empty {
+  padding: 100rpx 24rpx;
+  text-align: center;
+  color: #bbb;
+  font-size: 26rpx;
+}
